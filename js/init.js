@@ -10,12 +10,27 @@ define(["underscore",
             this.appRouter = null;
 
             this.init = function (opts) {
+                this.compileTemplates(opts.pages);
                 this.loadRoutes(opts.pages);
                 var AppRouter = Backbone.Router.extend({
                     routes: this.routes
                 });
                 this.appRouter = new AppRouter();
                 Backbone.history.start();
+            };
+
+            this.compileTemplates = function (pages) {
+                _.each(pages, function (page) {
+                    require(
+                        ["handlebars", "text!../../templates/" + page.template_path],
+                        function (Handlebars, Path) {
+                            //console.log("test");
+                            page.template = Handlebars.compile(Path);
+                            console.log(page);
+                        }
+                    );
+                    //console.log(n);
+                });
             };
 
             this.loadRoutes = function (pages) {
