@@ -71,9 +71,8 @@
 
 <script src="js/external/require.js"></script>
 <script src="js/require-config.js" type="text/javascript"></script>
-<script src="js/config.js" type="text/javascript"></script>
 <script>
-    require(["init"], function(App) {
+    require(["init", "config"], function(App) {
             var app = new App({pages: pages});
         }
     );
