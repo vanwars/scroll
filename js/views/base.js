@@ -1,15 +1,9 @@
-define(["backbone",
-        "handlebars",
-        "jquery"
-        ],
-    function (Backbone, Handlebars, $) {
+define(["backbone"],
+    function (Backbone) {
         "use strict";
         var BaseView = Backbone.View.extend({
             initialize: function () {
                 this.validate();
-                //this.template = Handlebars.compile($(this.template_source).html());
-                //this.template = Handlebars.compile(temp);
-                console.log(this);
                 this.render();
             },
             render: function () {
@@ -18,12 +12,13 @@ define(["backbone",
                     require(
                         ["handlebars", "text!../../templates/" + this.template_path],
                         function (Handlebars, Path) {
-                            console.log("Template is loading asynchronously");
+                            //console.log("Template is loading asynchronously");
                             that.template = Handlebars.compile(Path);
                             that.$el.html(that.template(that.extras));
                         }
                     );
                 } else {
+                    //console.log("Template loading from memory");
                     this.$el.html(this.template(this.extras));
                 }
             },

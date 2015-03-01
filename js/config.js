@@ -3,33 +3,27 @@
   Should look like a stylesheet, or MarkDown.
 */
 var pages = [{
-        template_path: "page1.html",
-        template_source: "#help-template",
+        template_path: "help.html",
         url: "help",
         extras: { title: "hi", username: "vanwars" }
-    }/*, {
-        template_path: "page1.html",
-        template_source: "#a-g-template",
+    }, {
+        template_path: "ag-requirements.html",
         url: "a-g",
         extras: { title: "hi", username: "vanwars" }
     }, {
-        template_path: "page1.html",
-        template_source: "#scholarships-list-template",
+        template_path: "scholarships.html",
         url: "scholarships",
         extras: { title: "hi", username: "vanwars" }
     }, {
-        template_path: "page1.html",
-        template_source: "#outside-of-school-template",
+        template_path: "extra-curriculars.html",
         url: "outside-school",
         extras: { title: "hi", username: "vanwars" }
     }, {
-        template_path: "page1.html",
-        template_source: "#test-prep-template",
+        template_path: "test-prep.html",
         url: "test-prep",
         extras: { title: "hi", username: "vanwars" }
     }, {
-        template_path: "page1.html",
-        template_source: "#essays-template",
+        template_path: "essays.html",
         url: "essays",
         extras: { title: "hi", username: "vanwars" }
-    }*/];
+    }];

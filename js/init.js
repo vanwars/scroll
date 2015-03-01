@@ -7,11 +7,12 @@ define(["underscore",
         "use strict";
         var App = function (opts) {
             this.routes = {};
+            this.views = {};
             this.appRouter = null;
 
             this.init = function (opts) {
-                this.compileTemplates(opts.pages);
-                this.loadRoutes(opts.pages);
+                this.buildViews(opts.pages);
+                this.buildRoutes(opts.pages);
                 var AppRouter = Backbone.Router.extend({
                     routes: this.routes
                 });
@@ -19,28 +20,21 @@ define(["underscore",
                 Backbone.history.start();
             };
 
-            this.compileTemplates = function (pages) {
+            this.buildViews = function (pages) {
+                var that = this;
+                /* Dynamically builds Backbone Views from the config file */
                 _.each(pages, function (page) {
-                    require(
-                        ["handlebars", "text!../../templates/" + page.template_path],
-                        function (Handlebars, Path) {
-                            //console.log("test");
-                            page.template = Handlebars.compile(Path);
-                            console.log(page);
-                        }
-                    );
-                    //console.log(n);
+                    var View = BaseView.extend(page);
+                    that.views[page.url] = new View();
                 });
             };
 
-            this.loadRoutes = function (pages) {
+            this.buildRoutes = function (pages) {
                 var that = this;
-                /* Dynamically builds Backbone Views and Routes from the config file */
+                /* Dynamically builds Backbone Routes from the config file */
                 _.each(pages, function (page) {
                     that.routes[page.url] = function () {
-                        var View = BaseView.extend(page),
-                            v = new View();
-                        $(".vcenter").html(v.el);
+                        $(".vcenter").html(that.views[page.url].el);
                         that.addAnimation();
                     };
                 });
