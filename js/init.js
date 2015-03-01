@@ -7,7 +7,7 @@ define(["underscore",
         "use strict";
         var App = function (opts) {
             this.routes = {};
-            this.views = {};
+            this.routeViews = {};
             this.appRouter = null;
 
             this.init = function (opts) {
@@ -24,8 +24,13 @@ define(["underscore",
                 var that = this;
                 /* Dynamically builds Backbone Views from the config file */
                 _.each(pages, function (page) {
-                    var View = BaseView.extend(page);
-                    that.views[page.url] = new View();
+                    var View = BaseView.extend(page),
+                        v = new View();
+                    if (page.url) {
+                        that.routeViews[page.url] = v;
+                    } else {
+                        $(page.target).html(v.el);
+                    }
                 });
             };
 
@@ -34,7 +39,7 @@ define(["underscore",
                 /* Dynamically builds Backbone Routes from the config file */
                 _.each(pages, function (page) {
                     that.routes[page.url] = function () {
-                        $(".vcenter").html(that.views[page.url].el);
+                        $(".vcenter").html(that.routeViews[page.url].el);
                         that.addAnimation();
                     };
                 });
