@@ -32,6 +32,9 @@ var pages = [{
         target: ".globalnav",
         className: "navwrapper cf"
     }, {
+        template_path: "spokes.html",
+        target: ".explore_mainnav"
+    }, {
         template_path: "help.html",
         target: ".vcenter"
     }];
