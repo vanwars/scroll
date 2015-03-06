@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: "/js",
+    baseUrl: "js",
     paths: {
         'backbone': 'external/backbone-min',
         'handlebars': 'external/handlebars.min',

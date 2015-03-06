@@ -4,10 +4,10 @@ define(["underscore", "backbone"],
         var Record = Backbone.Model.extend({
             urlRoot: null,
             initialize: function (opts) {
-                _.extend(this, opts);
-                this.urlRoot = 'http://dev.localground.org/api/0/forms/' +
-                                opts.tableID + '/data/' + opts.recordID;
-                alert(this.urlRoot);
+                //_.extend(this, opts);
+                this.urlRoot = "http://localhost:7777/api/0/forms/" +
+                                opts.tableID + "/data/" + opts.recordID + "/";
+                //alert(this.urlRoot);
             },
             url: function () {
                 /*

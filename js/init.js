@@ -1,14 +1,16 @@
 define(["underscore",
         "jquery",
         "backbone",
-        "views/base"
+        "views/base",
+        "views/record-detail"
     ],
-    function (_, $, Backbone, BaseView) {
+    function (_, $, Backbone, BaseView, DetailView) {
         "use strict";
         var App = function (opts) {
             this.routes = {};
             this.routeViews = {};
             this.appRouter = null;
+            this.defaultTarget = '.section-content';
 
             this.init = function (opts) {
                 this.addListeners();
@@ -30,7 +32,7 @@ define(["underscore",
                     if (page.url) {
                         that.routeViews[page.url] = v;
                     } else {
-                        $(page.target).html(v.el);
+                        $(page.target || that.defaultTargets).html(v.el);
                     }
                 });
             };
@@ -40,7 +42,7 @@ define(["underscore",
                 case "list":
                     return BaseView.extend(page);
                 case "detail":
-                    return BaseView.extend(page);
+                    return DetailView.extend(page);
                 default:
                     return BaseView.extend(page);
                 }
@@ -51,7 +53,7 @@ define(["underscore",
                 /* Dynamically builds Backbone Routes from the config file */
                 _.each(pages, function (page) {
                     that.routes[page.url] = function () {
-                        $(page.target).html(that.routeViews[page.url].el);
+                        $(page.target || that.defaultTarget).html(that.routeViews[page.url].el);
                         that.addAnimation();
                     };
                 });

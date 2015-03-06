@@ -2,6 +2,7 @@ define(["backbone"],
     function (Backbone) {
         "use strict";
         var BaseView = Backbone.View.extend({
+            extras: {},
             initialize: function () {
                 this.validate();
                 this.render();
@@ -21,6 +22,7 @@ define(["backbone"],
                     //console.log("Template loading from memory");
                     this.$el.html(this.template(this.extras));
                 }
+                return this.$el;
             },
             validate: function () {
                 if (this.template === 'undefined') {
