@@ -5,28 +5,28 @@
 var pages = [{
         template_path: "help.html",
         url: "help",
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "ag-requirements.html",
         url: "a-g",
         extras: { title: "hi", username: "vanwars" },
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "scholarships.html",
         url: "scholarships",
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "extra-curriculars.html",
         url: "outside-school",
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "test-prep.html",
         url: "test-prep",
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "essays.html",
         url: "essays",
-        target: ".vcenter"
+        target: ".section-content"
     }, {
         template_path: "main-menu.html",
         target: ".globalnav",
@@ -36,5 +36,5 @@ var pages = [{
         target: ".explore_mainnav"
     }, {
         template_path: "help.html",
-        target: ".vcenter"
+        target: ".section-content"
     }];

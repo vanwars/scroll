@@ -51,24 +51,18 @@ define(["underscore",
                 /* Dynamically builds Backbone Routes from the config file */
                 _.each(pages, function (page) {
                     that.routes[page.url] = function () {
-                        $(".vcenter").html(that.routeViews[page.url].el);
+                        $(page.target).html(that.routeViews[page.url].el);
                         that.addAnimation();
                     };
                 });
             };
 
             this.addAnimation = function () {
-                /*$(".learn_intro")
-                    .animate({ 'width': '48em' })
-                    .css({ 'background-color': 'rgba(53, 53, 53, 0.9)' });*/
                 $("#explore_section").addClass("showme");
             };
 
             this.addListeners = function () {
                 $('#close-project').click(function (e) {
-                    /*$(".learn_intro")
-                        .animate({ 'width': '16em' })
-                        .css({ 'background-color': 'rgba(53, 53, 53, 0.4)' });*/
                     $("#explore_section").removeClass("showme");
                     e.preventDefault();
                 });
