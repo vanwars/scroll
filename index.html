@@ -4,7 +4,8 @@
 	<meta charset="utf-8" />
 	<title>Camino Contigo</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="basic.css" media="all" />	
+	<link rel="stylesheet" href="screen.css" media="all" />
+    <!-- link rel="stylesheet" href="basic.css" media="all" / -->	
 </head>
 
 
@@ -30,7 +31,18 @@
             </div>
 		
         </div>
-        <div id="explore_section"></div>
+        <div id="explore_section" class="flow">
+            <div id="section-detail">
+                <div id="info_drawer">
+                    <div id="detail_info" class="drawer info current">
+                        <a href="#" id="close-project" class="fa fa-times-circle fa-2x pull-right"></a>
+                        <div class="section-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
         <div id="loading"></div>
     </div>
     <div class="bg-image"></div>

@@ -11,6 +11,7 @@ define(["underscore",
             this.appRouter = null;
 
             this.init = function (opts) {
+                this.addListeners();
                 this.buildViews(opts.pages);
                 this.buildRoutes(opts.pages);
                 var AppRouter = Backbone.Router.extend({
@@ -24,7 +25,7 @@ define(["underscore",
                 var that = this;
                 /* Dynamically builds Backbone Views from the config file */
                 _.each(pages, function (page) {
-                    var View = BaseView.extend(page),
+                    var View = that.getView(page),
                         v = new View();
                     if (page.url) {
                         that.routeViews[page.url] = v;
@@ -32,6 +33,17 @@ define(["underscore",
                         $(page.target).html(v.el);
                     }
                 });
+            };
+
+            this.getView = function (page) {
+                switch (page.type) {
+                case "list":
+                    return BaseView.extend(page);
+                case "detail":
+                    return BaseView.extend(page);
+                default:
+                    return BaseView.extend(page);
+                }
             };
 
             this.buildRoutes = function (pages) {
@@ -46,9 +58,20 @@ define(["underscore",
             };
 
             this.addAnimation = function () {
-                $(".learn_intro")
+                /*$(".learn_intro")
                     .animate({ 'width': '48em' })
-                    .css({ 'background-color': 'rgba(53, 53, 53, 0.9)' });
+                    .css({ 'background-color': 'rgba(53, 53, 53, 0.9)' });*/
+                $("#explore_section").addClass("showme");
+            };
+
+            this.addListeners = function () {
+                $('#close-project').click(function (e) {
+                    /*$(".learn_intro")
+                        .animate({ 'width': '16em' })
+                        .css({ 'background-color': 'rgba(53, 53, 53, 0.4)' });*/
+                    $("#explore_section").removeClass("showme");
+                    e.preventDefault();
+                });
             };
 
             //call init upon initialization:
