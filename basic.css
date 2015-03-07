@@ -738,7 +738,7 @@ a.major_cta {
         color: #e30031; }
 
 #learn .bg-image {
-  /*background-image: url('images/bg.jpg');*/
+  background-image: url('http://ucberkeley.projectrishi.org/wp-content/uploads/2014/02/Nonprofitnexus_banner.png');
   -webkit-background-size: cover;
   background-size: cover;
   background-color: #86B1DB;
@@ -951,3 +951,22 @@ a.major_cta {
     overflow: auto;
     position: relative;
 }
+
+.explore-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.section-content {
+    padding: 96px 32px 32px;
+    padding:  6rem 2rem 2rem;
+}
+
+
+
