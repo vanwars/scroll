@@ -677,66 +677,6 @@ a.major_cta {
   padding: 1.6em;
   text-align: left; }
 
-.action {
-  margin: 1px;
-  position: relative;
-  -webkit-font-smoothing: antialiased; }
-  .action h2 {
-    font-size: 18px;
-    font-size: 1.125rem;
-    margin-bottom: 16px;
-    margin-bottom: 1rem;
-    font-weight: 600; }
-  @media screen and (min-width: 28.125em) {
-    .action {
-      display: inline-block;
-      vertical-align: top;
-      width: 49%;
-      min-height: 200px;
-      padding-bottom: 4em; }
-      .action h2 {
-        margin-bottom: 0; }
-      .action .buttons {
-        position: absolute;
-        bottom: 1em;
-        left: 0;
-        right: 0; } }
-  @media screen and (min-width: 46.875em) {
-    .action {
-      width: 32%; } }
-  .action .donate {
-    font-size: 12px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    max-width: 60%;
-    float: left;
-    text-align: left;
-    margin-left: 16px;
-    margin-left: 1rem; }
-  .action .info {
-    height: 36px;
-    height: 2.25rem;
-    width: 36px;
-    width: 2.25rem;
-    border-radius: 50%;
-    float: right;
-    margin-left: 2px;
-    background-color: #F5F5F5;
-    text-align: center;
-    margin-right: 16px;
-    margin-right: 1rem; }
-    .action .info .icon {
-      font-size: 32px;
-      font-size: 2rem;
-      line-height: 38px;
-      line-height: 2.375rem;
-      color: #353535; }
-    .action .info:hover {
-      background-color: #FFF; }
-      .action .info:hover .icon {
-        color: #e30031; }
-
 #learn .bg-image {
   background-image: url('http://ucberkeley.projectrishi.org/wp-content/uploads/2014/02/Nonprofitnexus_banner.png');
   -webkit-background-size: cover;
@@ -912,7 +852,7 @@ a.major_cta {
 @media screen and (min-width: 46.875em) {
     #info_drawer {
         top: 0;
-        right: 0;
+        left: 0;
         max-width: 36em;
         width: 50%;
         padding-bottom: 100px;
