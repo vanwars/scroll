@@ -678,7 +678,7 @@ a.major_cta {
   text-align: left; }
 
 #learn .bg-image {
-  background-image: url('http://ucberkeley.projectrishi.org/wp-content/uploads/2014/02/Nonprofitnexus_banner.png');
+  background-image: url('images/sather_gate.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-color: #86B1DB;
@@ -829,7 +829,6 @@ a.major_cta {
 }
 
 
-
 /**************/
 #info_drawer {
     z-index: 50;
@@ -906,6 +905,9 @@ a.major_cta {
 .section-content {
     padding: 96px 32px 32px;
     padding:  6rem 2rem 2rem;
+}
+.fa-times-circle {
+    margin: 5px 5px 0px 0px;
 }
 
 
