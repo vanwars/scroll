@@ -842,14 +842,14 @@ a.major_cta {
     overflow: hidden;
     padding-bottom: 300px;
     background-color: rgba(247, 247, 243, 0.85);
-    /*-moz-transition: -moz-transform 300ms ease;
+    -moz-transition: -moz-transform 300ms ease;
     -o-transition: -o-transform 300ms ease;
     -webkit-transition: -webkit-transform 300ms ease;
     transition: transform 300ms ease;
     -moz-transform: translate3d(100%, 0, 0);
     -ms-transform: translate3d(100%, 0, 0);
     -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);*/
+    transform: translate3d(100%, 0, 0);
 }
 @media screen and (min-width: 46.875em) {
     #info_drawer {
@@ -862,20 +862,20 @@ a.major_cta {
 }
 
 #explore_section.showme #info_drawer {
-    /*-moz-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);*/
+    transform: translate3d(0, 0, 0);
 }
 #info_drawer .drawer {
-    /*-moz-transition: -moz-transform 300ms ease;
+    -moz-transition: -moz-transform 300ms ease;
     -o-transition: -o-transform 300ms ease;
     -webkit-transition: -webkit-transform 300ms ease;
     transition: transform 300ms ease;
     -moz-transform: translate3d(100%, 0, 0);
     -ms-transform: translate3d(100%, 0, 0);
     -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);*/
+    transform: translate3d(100%, 0, 0);
     display: block;
     width: 100%;
     min-height: 100%;
@@ -885,10 +885,10 @@ a.major_cta {
     overflow: hidden;
 }
 #info_drawer .drawer.current {
-    /*-moz-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);*/
+    transform: translate3d(0, 0, 0);
     height: auto;
     overflow: auto;
     position: relative;
