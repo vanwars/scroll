@@ -196,7 +196,9 @@ body {
   background-color: #F5F5F5;
   color: #353535;
   font: normal 16px/1.4 "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 abbr {
   cursor: help; }
@@ -843,10 +845,10 @@ a.major_cta {
     -o-transition: -o-transform 300ms ease;
     -webkit-transition: -webkit-transform 300ms ease;
     transition: transform 300ms ease;
-    -moz-transform: translate3d(100%, 0, 0);
+    /*-moz-transform: translate3d(100%, 0, 0);
     -ms-transform: translate3d(100%, 0, 0);
     -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);*/
 }
 @media screen and (min-width: 46.875em) {
     #info_drawer {
