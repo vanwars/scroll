@@ -623,8 +623,8 @@ a.nav-branding:hover h1 {
 
 /* ------------------------------------------ */
 #explore_section, .inner_nav {
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
   z-index: 300;
   -moz-transition-property: opacity, visibility;
   -o-transition-property: opacity, visibility;
