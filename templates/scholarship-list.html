@@ -1,5 +1,12 @@
 
-<div class="results"></div>
+
 <div style="border: solid 1px #f00;">
-    Container
+    <strong>Scholarships</strong>
+    <div class="results"></div>
 </div>
+{{#if previous}}
+<a href="{{previous}}">previous</a>
+{{/if}} 
+{{#if next}}
+<a href="{{next}}">next</a>
+{{/if}}

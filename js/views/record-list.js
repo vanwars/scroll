@@ -11,14 +11,15 @@ define(["underscore",
          * @class OverlayManager
          */
         //Todo: can this be a Marionette CollectionManager, since it's managing Layer models?
-        var RecordList = Marionette.CollectionView.extend({
-            //itemViewContainer: '.results',
+        var RecordList = Marionette.CompositeView.extend({
+
+            childViewContainer: '.results',
             initialize: function (opts) {
-                //var that = this;
                 this.collection = new Collection({ table_id: opts.table_id });
-                this.listenTo(this.collection, 'reset', this.render);
+                this.listenTo(this.collection, 'reset', this.renderWithHelpers);
                 this.loadTemplates(opts);
             },
+
             loadTemplates: function (opts) {
                 var that = this;
                 require([
@@ -34,11 +35,16 @@ define(["underscore",
                         that.collection.fetch({reset: true});
                     });
             },
-            appendHtml: function (collectionView, itemView) {
-                console.log("appendHtml");
-                collectionView.$(".results").append(itemView.el);
+
+            renderWithHelpers: function () {
+                this.templateHelpers = {
+                    next: this.collection.next,
+                    previous: this.collection.previous
+                };
+                this.render();
             }
+
         });
-        //_.extend(RecordList.prototype, ViewMixin);
+
         return RecordList;
     });
