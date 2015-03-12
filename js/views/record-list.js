@@ -12,19 +12,11 @@ define(["underscore",
          */
         //Todo: can this be a Marionette CollectionManager, since it's managing Layer models?
         var RecordList = Marionette.CollectionView.extend({
-            /**
-             * @lends localground.maps.views.LayerManager#
-             */
-            //childView: RecordView,
-
-            /*childView: Marionette.ItemView.extend({
-                template: '#test'
-            }),*/
-
+            //itemViewContainer: '.results',
             initialize: function (opts) {
                 //var that = this;
                 this.collection = new Collection({ table_id: opts.table_id });
-                this.listenTo(this.collection, 'reset', this.fetched);
+                this.listenTo(this.collection, 'reset', this.render);
                 this.loadTemplates(opts);
             },
             loadTemplates: function (opts) {
@@ -36,23 +28,15 @@ define(["underscore",
 
                     function (Handlebars, CollectionTemplatePath, ItemTemplatePath) {
                         that.childView = Marionette.ItemView.extend({
-                            template: function () {
-                                return ItemTemplatePath;
-                            }
+                            template: Handlebars.compile(ItemTemplatePath)
                         });
                         that.template = Handlebars.compile(CollectionTemplatePath);
                         that.collection.fetch({reset: true});
                     });
             },
-            /*getItemView: function (item) {
-                console.log(item);
-                return Marionette.ItemView.extend({
-                    template: _.template('#test')
-                }); //someItemSpecificView;
-            },*/
-            fetched: function () {
-                console.log("fetched");
-                this.render();
+            appendHtml: function (collectionView, itemView) {
+                console.log("appendHtml");
+                collectionView.$(".results").append(itemView.el);
             }
         });
         //_.extend(RecordList.prototype, ViewMixin);
