@@ -34,8 +34,9 @@ var pages = [
     },
     {
         url: "scholarships",
-        template_path: "scholarships.html",
-        //type: "detail"
+        collection_template_path: "scholarship-list.html",
+        item_template_path: "scholarship-item.html",
+        type: "list",
         table_id: 4
     },
     {

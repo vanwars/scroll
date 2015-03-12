@@ -2,9 +2,10 @@ define(["underscore",
         "jquery",
         "backbone",
         "views/base",
+        "views/record-list",
         "views/record-detail"
     ],
-    function (_, $, Backbone, BaseView, DetailView) {
+    function (_, $, Backbone, BaseView, RecordListView, RecordDetailView) {
         "use strict";
         var App = function (opts) {
             this.routes = {};
@@ -28,7 +29,7 @@ define(["underscore",
                 /* Dynamically builds Backbone Views from the config file */
                 _.each(pages, function (page) {
                     var View = that.getView(page),
-                        v = new View();
+                        v = new View(page);
                     if (page.url) {
                         that.routeViews[page.url] = v;
                     } else {
@@ -38,11 +39,12 @@ define(["underscore",
             };
 
             this.getView = function (page) {
+                //console.log(page);
                 switch (page.type) {
                 case "list":
-                    return BaseView.extend(page);
+                    return RecordListView.extend(page);
                 case "detail":
-                    return DetailView.extend(page);
+                    return RecordDetailView.extend(page);
                 default:
                     return BaseView.extend(page);
                 }

@@ -9,12 +9,13 @@ define([], function () {
                     ["handlebars", "text!../templates/" + this.template_path],
                     function (Handlebars, Path) {
                         //console.log("Template is loading asynchronously");
+                        //_.extend(that.extras, that.model.toJSON());
                         that.template = Handlebars.compile(Path);
                         that.$el.html(that.template(that.extras));
                     }
                 );
             } else {
-                //console.log("Template loading from memory");
+                console.log("Template loading from memory");
                 this.$el.html(this.template(this.extras));
             }
             return this.$el;

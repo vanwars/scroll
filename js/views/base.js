@@ -1,4 +1,4 @@
-define(["underscore", "marionette", "views/viewMixin"],
+define(["underscore", "marionette", "views/view-mixin"],
     function (_, Marionette, ViewMixin) {
         "use strict";
         var BaseView = Marionette.View.extend({
