@@ -1,12 +1,14 @@
+<h2>Scholarships</h2>
+<p> {{ count }} scholarships have been found for you!</p>
+<div class="data-container"></div>
+{{# if previous }}
+    <a class="page" href="{{previous}}">previous</a>
+{{/ if }}
 
+{{# if previous }}
+    {{# if next }} | {{/ if }}
+{{/ if }}
 
-<div style="border: solid 1px #f00;">
-    <strong>Scholarships</strong>
-    <div class="results"></div>
-</div>
-{{#if previous}}
-<a href="{{previous}}">previous</a>
-{{/if}} 
-{{#if next}}
-<a href="{{next}}">next</a>
-{{/if}}
+{{# if next }}
+    <a class="page" href="{{next}}">next</a>
+{{/ if }}

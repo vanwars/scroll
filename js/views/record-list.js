@@ -13,7 +13,12 @@ define(["underscore",
         //Todo: can this be a Marionette CollectionManager, since it's managing Layer models?
         var RecordList = Marionette.CompositeView.extend({
 
-            childViewContainer: '.results',
+            events: {
+                'click .page': 'newPage'
+            },
+
+            childViewContainer: '.data-container',
+
             initialize: function (opts) {
                 this.collection = new Collection({ table_id: opts.table_id });
                 this.listenTo(this.collection, 'reset', this.renderWithHelpers);
@@ -39,9 +44,15 @@ define(["underscore",
             renderWithHelpers: function () {
                 this.templateHelpers = {
                     next: this.collection.next,
-                    previous: this.collection.previous
+                    previous: this.collection.previous,
+                    count: this.collection.count
                 };
                 this.render();
+            },
+
+            newPage: function (e) {
+                alert("next page");
+                e.preventDefault();
             }
 
         });
