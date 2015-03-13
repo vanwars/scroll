@@ -17,7 +17,7 @@ define(["backbone"],
                 isVisible: true
             },
             initialize: function (opts) {
-                this.url = 'http://localhost:7777/api/0/forms/' + opts.table_id + '/data/';
+                this.url = 'http://dev.localground.org/api/0/forms/' + opts.table_id + '/data/';
             },
             parse: function (response) {
                 this.count = response.count;

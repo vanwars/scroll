@@ -37,7 +37,7 @@ var pages = [
         collection_template_path: "scholarship-list.html",
         item_template_path: "scholarship-item.html",
         type: "list",
-        table_id: 4
+        table_id: 9
     },
     {
         url: "outside-school",
