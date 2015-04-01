@@ -20,7 +20,11 @@ define(["underscore",
             childViewContainer: '.data-container',
 
             initialize: function (opts) {
-                this.collection = new Collection({ table_id: opts.table_id });
+                this.collection = new Collection({
+                    table_id: opts.table_id,
+                    page_size: 100,
+                    comparator: "ordering"
+                });
                 this.listenTo(this.collection, 'reset', this.renderWithHelpers);
                 this.loadTemplates(opts);
             },
@@ -30,11 +34,13 @@ define(["underscore",
                 require([
                     "handlebars",
                     "text!../templates/" + opts.collection_template_path,
-                    "text!../templates/" + opts.item_template_path],
+                    "text!../templates/" + opts.item_template_path,
+                    "handlebars-helpers"],
 
                     function (Handlebars, CollectionTemplatePath, ItemTemplatePath) {
                         that.childView = Marionette.ItemView.extend({
-                            template: Handlebars.compile(ItemTemplatePath)
+                            template: Handlebars.compile(ItemTemplatePath),
+                            tagName: "tr"
                         });
                         that.template = Handlebars.compile(CollectionTemplatePath);
                         that.collection.fetch({reset: true});
@@ -47,6 +53,7 @@ define(["underscore",
                     previous: this.collection.previous,
                     count: this.collection.count
                 };
+                this.collection.sort();
                 this.render();
             },
 

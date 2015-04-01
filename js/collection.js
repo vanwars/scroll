@@ -1,5 +1,5 @@
-define(["backbone"],
-    function (Backbone) {
+define(["underscore", "backbone"],
+    function (_, Backbone) {
         "use strict";
         /**
          * An "abstract" Backbone Collection; the root of all of the other
@@ -13,11 +13,13 @@ define(["backbone"],
             next: null,
             previous: null,
             count: 0,
+            page_size: 100,
             defaults: {
                 isVisible: true
             },
             initialize: function (opts) {
-                this.url = 'http://dev.localground.org/api/0/forms/' + opts.table_id + '/data/';
+                _.extend(this, opts);
+                this.url = 'http://dev.localground.org/api/0/forms/' + this.table_id + '/data/?page_size=' + this.page_size;
             },
             parse: function (response) {
                 this.count = response.count;

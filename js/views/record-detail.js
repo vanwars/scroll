@@ -7,7 +7,7 @@ define(["underscore", "marionette", "views/view-mixin", "model"],
                 'change': 'render'
             },
             onBeforeRender: function () {
-                console.log("onBeforeRender", this.model);
+                //console.log("onBeforeRender", this.model);
                 _.extend(this.extras, this.model.toJSON());
             },
             initialize: function (opts) {
