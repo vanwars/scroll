@@ -23,7 +23,7 @@ define(["underscore",
                 this.collection = new Collection({
                     table_id: opts.table_id,
                     page_size: 100,
-                    comparator: "ordering"
+                    comparator: "id"
                 });
                 this.listenTo(this.collection, 'reset', this.renderWithHelpers);
                 this.loadTemplates(opts);

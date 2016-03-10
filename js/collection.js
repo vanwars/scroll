@@ -19,7 +19,7 @@ define(["underscore", "backbone"],
             },
             initialize: function (opts) {
                 _.extend(this, opts);
-                this.url = 'http://dev.localground.org/api/0/forms/' + this.table_id + '/data/?page_size=' + this.page_size;
+                this.url = 'https://dev.localground.org/api/0/forms/' + this.table_id + '/data/?page_size=' + this.page_size;
             },
             parse: function (response) {
                 this.count = response.count;
@@ -27,6 +27,9 @@ define(["underscore", "backbone"],
                 this.previous = response.previous;
                 console.log(this.next, this.previous, this.count);
                 return response.results;
+            },
+            comparator: function (model) {
+                return -model.get("id"); // Note the minus!
             }
 
         });

@@ -2,56 +2,34 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Camino Contigo</title>
+	<title>Class Observations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="basic.css" media="all" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        .fa-hand-paper-o { color: #337CA0; }
+        .fa-user { color: #E13700; }
+        
+        .wiggle {
+            -webkit-animation: wiggle 0.8s infinite linear;
+            animation: wiggle 0.8s infinite linear;
+            -webkit-transform-origin:50% 50%;
+        }
+        
+        @-webkit-keyframes wiggle {
+            0% { -webkit-transform: rotate(0deg); }
+            25% { -webkit-transform: rotate(20deg); }
+            50% { -webkit-transform: rotate(0deg); }
+            75% { -webkit-transform: rotate(-20deg); }
+        }
+    </style>
 </head>
 
-
-<body id="learn" data-controller="learn" data-action="learn" class="lang_english image_background">
-
-    <nav class="topnav">
-        <a href="#" class="nav-branding" ><h1>Camino Contigo</h1></a>
-        <a href="#" class="nav-lang textnav">¿Hablas español?</a>
-    </nav>
-    
-    <!-- this is where the left-hand menu gets injected -->
-    <nav class="globalnav"></nav>
-
-    <div id="explore_wrapper">
-        
-        <div id="explore_main" class="showme" >
-            <!-- this is where the spokes menu gets injected -->
-            <div class="explore_mainnav cf"></div>
-            <!-- this is where the content comes in from the left -->
-            <div class="learn_intro" >
-                <div class="vcenter"></div>
-            </div>
-        </div>
-        
-        <div id="explore_section" class="flow">
-            <div id="section-detail">
-                <div id="info_drawer">
-                    <div id="detail_info" class="drawer info current">
-                        <a href="#" id="close-project" class="fa fa-times-circle fa-2x pull-right"></a>
-                        <div class="section-content"></div>
-                    </div>
-                </div>
-                <div class="explore-background" style="background-color: rgba(0,0,0,0.7);"></div>
-            </div>
-            
-        </div>
-        
-        <div id="loading"></div>
+<body>
+    <div class="container">
+        <div class="main"></div>
     </div>
-    <div class="bg-image"></div>
-    
 </body>
-
-<script type="text/template" id="test">
-    blah <%= display_name %> - <%= description %> <br /><br />
-</script>
 
 <script src="js/external/require.js"></script>
 <script src="js/require-config.js" type="text/javascript"></script>

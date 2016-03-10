@@ -1,0 +1,25 @@
+<td>{{ ordering }}</td>
+<td>
+    <video width="250" controls>
+        <source src="http://code510.org/vanwars/clips/{{ video_file_name }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</td>
+<td>{{ time }}</td>
+<td {{# ifHasQuotes kathryn }}style="border-right: solid 6px #DA587A;background-color: rgba(218, 88, 122,.2);"{{/ ifHasQuotes }}>
+    {{ kathryn }}
+</td>
+<td {{# ifHasQuotes ms_ingley}}style="border-right: solid 6px #5D916B;background-color: #D4E6B5;"{{/ ifHasQuotes }}>
+    {{ ms_ingley }}
+</td>
+<td {{# ifHasQuotes student_speaker }}style="border-right: solid 6px #337CA0;background-color: #A9DDD6;"{{/ ifHasQuotes }}>
+    {{ student_speaker }}
+</td>
+<td>
+    {{{ count hands "fa-hand-paper-o fa-2x"}}}
+    {{ hands }}
+</td>
+<td>
+    {{{ count student_movement "wiggle fa-user fa-2x" }}}
+    {{ student_movement }}
+</td>
